@@ -1,0 +1,19 @@
+{
+  "id": "clawatch",
+  "name": "Clawatch",
+  "description": "Connect Clawatch device to OpenClaw for remote chat and control",
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "enabled": { "type": "boolean", "default": true },
+      "apiUrl": { "type": "string", "default": "wss://api.sg.mempat.com/api/v1/watch/connect", "description": "WebSocket URL. Default is set; override via CLAWATCH_API_URL or OPENCLAW_CLAWATCH_API_URL env var if needed." },
+      "deviceCode": { "type": "string" },
+      "apiToken": { "type": "string" },
+      "agentId": { "type": "string" },
+      "sessionKeyPrefix": { "type": "string" },
+      "ttsSystemPrompt": { "type": "string", "description": "System prompt for TTS-friendly replies. Empty = use default (short, natural speech)." },
+      "interimStatusEnabled": { "type": "boolean", "default": true, "description": "Enable interim status messages before long-running tools (exec, web search, etc)." }
+    }
+  }
+}
